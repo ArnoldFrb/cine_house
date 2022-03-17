@@ -1,4 +1,4 @@
-import 'package:cine_house/src/app/pages/home/home_view.dart';
+import 'package:cine_house/src/app/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 const String homeRoute = '/';
