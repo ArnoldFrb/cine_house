@@ -8,10 +8,10 @@ class GetMovieUseCase extends UseCase<void, GetMovieUseCaseResponse> {
   GetMovieUseCase(this._moviesRepository);
 
   @override
-  Future<Stream<GetMovieUseCaseResponse>> buildUseCaseStream(void params) async {
+  Future<Stream<GetMovieUseCaseResponse>> buildUseCaseStream(params) async {
     final controller = StreamController<GetMovieUseCaseResponse>();
     try{
-      final movies = _moviesRepository.getMovies();
+      final movies = await _moviesRepository.getMovies();
       controller.add(GetMovieUseCaseResponse(movies));
       logger.finest('GetUserUseCase successful.');
       controller.close();
@@ -23,11 +23,7 @@ class GetMovieUseCase extends UseCase<void, GetMovieUseCaseResponse> {
   }
 }
 
-class GetMovieUseCaseParams {
-  GetMovieUseCaseParams();
-}
-
 class GetMovieUseCaseResponse {
-  final Future<Movie> movies;
+  final Movie movies;
   GetMovieUseCaseResponse(this.movies);
 }
