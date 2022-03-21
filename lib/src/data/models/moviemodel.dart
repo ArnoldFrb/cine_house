@@ -43,7 +43,7 @@ class MovieModel extends Movie {
 }
 
 class ResultModel extends Result {
-  final String? posterPaht;
+  final String posterPath;
   final bool adult;
   final String overview;
   final String releaseDate;
@@ -59,7 +59,7 @@ class ResultModel extends Result {
   final double voteAverage;
 
   const ResultModel({
-    this.posterPaht,
+    required this.posterPath,
     required this.adult,
     required this.overview,
     required this.releaseDate,
@@ -74,7 +74,7 @@ class ResultModel extends Result {
     required this.video,
     required this.voteAverage,
   }) : super(
-          posterPaht: posterPaht,
+          posterPath: posterPath,
           adult: adult,
           overview: overview,
           releaseDate: releaseDate,
@@ -91,7 +91,7 @@ class ResultModel extends Result {
         );
 
   factory ResultModel.fromJson(Map<String, dynamic> json) => ResultModel(
-        posterPaht: json["poster_paht"],
+        posterPath: json["poster_path"],
         adult: json["adult"],
         overview: json["overview"],
         releaseDate: json["release_date"],
@@ -104,11 +104,11 @@ class ResultModel extends Result {
         popularity: json["popularity"].toDouble(),
         voteCount: json["vote_count"],
         video: json["video"],
-        voteAverage: json["vote_average"],
+        voteAverage: json["vote_average"].toDouble(),
       );
 
   Map<String, dynamic> toJson() => {
-        "poster_paht": posterPaht,
+        "poster_path": posterPath,
         "adult": adult,
         "overview": overview,
         "release_date": releaseDate,

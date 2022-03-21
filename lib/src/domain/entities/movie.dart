@@ -18,7 +18,7 @@ class Movie extends Equatable {
 }
 
 class Result extends Equatable {
-  final String? posterPaht;
+  final String posterPath;
   final bool adult;
   final String overview;
   final String releaseDate;
@@ -34,7 +34,7 @@ class Result extends Equatable {
   final double voteAverage;
 
   const Result({
-    this.posterPaht,
+    required this.posterPath,
     required this.adult,
     required this.overview,
     required this.releaseDate,
@@ -52,7 +52,7 @@ class Result extends Equatable {
 
   @override
   List<Object?> get props => [
-        posterPaht,
+        posterPath,
         adult,
         overview,
         releaseDate,

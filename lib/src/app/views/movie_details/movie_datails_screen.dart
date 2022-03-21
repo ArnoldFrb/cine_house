@@ -86,7 +86,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
       );
     } else {
       return Image(
-        image: const NetworkImage('https://www.placecage.com/640/360'),
+        image: NetworkImage('https://image.tmdb.org/t/p/w185'+widget.result!.posterPath),
         height: size.height * 0.33,
       );
     }

@@ -24,7 +24,7 @@ class MovieListMobile extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 image: const DecorationImage(
-                  image: NetworkImage('https://www.placecage.com/640/360'),
+                  image: NetworkImage('https://placekitten.com/g/640/360'),
                   fit: BoxFit.cover
                 )
               ),
@@ -70,8 +70,8 @@ class MovieListMobile extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      image: const DecorationImage(
-                        image: NetworkImage('https://www.placecage.com/640/360'),
+                      image: DecorationImage(
+                        image: NetworkImage('https://image.tmdb.org/t/p/w185'+item.posterPath),
                         fit: BoxFit.cover
                       )
                     ),

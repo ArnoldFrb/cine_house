@@ -1,5 +1,4 @@
 import 'package:cine_house/src/core/exceptions.dart';
-import 'package:cine_house/src/data/doubles/movies.dart';
 import 'package:cine_house/src/data/models/moviemodel.dart';
 import 'package:http/http.dart' as http; 
 
@@ -15,9 +14,9 @@ class MoviesRemoteDataSource implements IMoviesRemoteDataSource{
 
   @override
   Future<MovieModel> requestMovie() async {
-    var response = await client.get(Uri.parse('https://api.themoviedb.org/3/movie/popular?api_key=%3C%3Capi_key%3E%3E&language=en-US&page=1'));
-    if(response.statusCode != 200){
-      return MovieModel.fromJson(jsonMovies);
+    var response = await client.get(Uri.parse('https://api.themoviedb.org/3/movie/popular?api_key=41ad7ea4dd973638091cebfd44e63e9b&language=en-US&page=1'));
+    if(response.statusCode == 200){
+      return movieModelFromJson(response.body);
     }
     throw ServerException();
   }
