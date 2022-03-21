@@ -1,7 +1,9 @@
 import 'package:cine_house/src/app/router.dart';
 import 'package:flutter/material.dart';
+import 'package:cine_house/injection_container.dart' as di;
 
-void main() {
+void main() async {
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CineHouse',
       onGenerateRoute: RouterDynamic.generateRoute,
-      initialRoute: homeRoute,
+      initialRoute: movieListRoute,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

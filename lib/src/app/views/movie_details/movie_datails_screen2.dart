@@ -2,15 +2,15 @@ import 'package:cine_house/src/data/services/movies_service.dart';
 import 'package:cine_house/src/domain/entities/movie.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
+class MovieDetailsScreen2 extends StatefulWidget {
+  const MovieDetailsScreen2({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<HomePage> createState() => _MyHomePageState();
+  State<MovieDetailsScreen2> createState() => _MyMovieDetailsScreen2State();
 }
 
-class _MyHomePageState extends State<HomePage> {
+class _MyMovieDetailsScreen2State extends State<MovieDetailsScreen2> {
   late Future<Movie> _movie;
 
   @override

@@ -1,14 +1,16 @@
-import 'package:cine_house/src/app/views/home/home_view.dart';
+
+import 'package:cine_house/src/app/views/movie_details/movie_datails_screen.dart';
+import 'package:cine_house/src/app/views/movie_list/movie_list_screen.dart';
 import 'package:flutter/material.dart';
 
-const String homeRoute = '/';
-const String signInRoute = '/sign-in';
+const String movieListRoute = '/';
+const String movieDetailsRoute = '/movie-details';
 
 class RouterDynamic {
   static Route<dynamic> generateRoute(RouteSettings settings){
     switch(settings.name){
-      case homeRoute: return MaterialPageRoute(builder: (_) => const HomePage(title: 'Hello world'));
-      case signInRoute: return MaterialPageRoute(builder: (_) => const HomePage(title: 'Sign In'));
+      case movieListRoute: return MaterialPageRoute(builder: (_) => const MovieListScreen(title: 'Movies'));
+      case movieDetailsRoute: return MaterialPageRoute(builder: (_) => const MovieDetailsScreen());
       default: return MaterialPageRoute(builder: (_) => const Scaffold(
         body: Center(
           child: Text('Hola'),
