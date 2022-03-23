@@ -19,7 +19,7 @@ class ErrorMesagge extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20,),
-          ElevatedButton(onPressed: onPressed, child: const Text('Reintentar.'))
+          ElevatedButton(onPressed: onPressed, child: const Text('Reintentar.'),)
         ]
       ),
     );

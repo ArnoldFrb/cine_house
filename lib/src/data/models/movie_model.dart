@@ -1,7 +1,6 @@
 // ignore_for_file: overridden_fields, annotate_overrides
 
 import 'dart:convert';
-
 import 'package:cine_house/src/domain/entities/movie.dart';
 
 MovieModel movieModelFromJson(String str) =>

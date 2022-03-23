@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:cine_house/src/data/doubles/movies.dart';
-import 'package:cine_house/src/data/models/moviemodel.dart';
+import 'package:cine_house/src/data/models/movie_model.dart';
 import 'package:cine_house/src/domain/entities/movie.dart';
 import 'package:http/http.dart' as http;
 

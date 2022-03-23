@@ -1,5 +1,5 @@
 import 'package:cine_house/src/core/exceptions.dart';
-import 'package:cine_house/src/data/models/moviemodel.dart';
+import 'package:cine_house/src/data/models/movie_model.dart';
 import 'package:http/http.dart' as http; 
 
 abstract class IMoviesRemoteDataSource {
@@ -9,7 +9,6 @@ abstract class IMoviesRemoteDataSource {
 class MoviesRemoteDataSource implements IMoviesRemoteDataSource{
 
   final http.Client client;
-
   MoviesRemoteDataSource(this.client);
 
   @override
@@ -20,5 +19,4 @@ class MoviesRemoteDataSource implements IMoviesRemoteDataSource{
     }
     throw ServerException();
   }
-
 }

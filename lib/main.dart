@@ -1,6 +1,6 @@
 import 'package:cine_house/src/app/router.dart';
 import 'package:flutter/material.dart';
-import 'package:cine_house/injection_container.dart' as di;
+import 'package:cine_house/src/di/injection_container.dart' as di;
 
 void main() async {
   await di.init();
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CineHouse',
+      title: 'Cine House',
       onGenerateRoute: RouterDynamic.generateRoute,
       initialRoute: movieListRoute,
       theme: ThemeData(

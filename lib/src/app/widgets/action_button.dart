@@ -16,7 +16,7 @@ class ActionButton extends StatelessWidget {
       child: Column(
         children: [
           Text(title.toUpperCase(), style: const TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-          Text(value, textAlign: TextAlign.center,),
+          Text(value, textAlign: TextAlign.center, style: TextStyle(color: Colors.grey.shade800),),
         ],
       )
     );

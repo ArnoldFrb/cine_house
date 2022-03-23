@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:cine_house/src/core/failure.dart';
 import 'package:cine_house/src/domain/entities/movie.dart';
-import 'package:cine_house/src/domain/usecases/get_movies.dart';
+import 'package:cine_house/src/domain/usecases/movie/get_movies.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 

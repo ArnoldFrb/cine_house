@@ -41,6 +41,7 @@ dependencies:
   bloc: ^8.0.3
   get_it: ^7.2.0
   screen_type_layout: ^1.0.0
+  shared_preferences: ^2.0.13
 
 dev_dependencies:
   flutter_test:

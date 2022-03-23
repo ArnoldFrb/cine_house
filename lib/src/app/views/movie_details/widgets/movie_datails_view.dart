@@ -3,38 +3,18 @@ import 'package:cine_house/src/app/widgets/action_button.dart';
 import 'package:cine_house/src/domain/entities/movie.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class MovieDetailsScreen extends StatefulWidget {
+class MovieDetailsView extends StatefulWidget {
   final Result? result;
-  const MovieDetailsScreen({Key? key, this.result}) : super(key: key);
+  const MovieDetailsView({Key? key, this.result}) : super(key: key);
 
   @override
-  State<MovieDetailsScreen> createState() => _MovieDetailsScreenState();
+  State<MovieDetailsView> createState() => _MovieDetailsViewState();
 }
 
-class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-  late Future<bool> _favorite;
+class _MovieDetailsViewState extends State<MovieDetailsView> {
 
-  Future<void> favorite() async {
-    final SharedPreferences prefs = await _prefs;
-    final favorite = prefs.getBool(widget.result!.id.toString()) ?? false;
-
-    setState(() {
-      _favorite = prefs.setBool(widget.result!.id.toString(), !favorite).then((bool success) {
-        return !favorite;
-      });
-    });
-  }
-
-  @override
-  void initState(){
-    super.initState();
-    _favorite = _prefs.then((SharedPreferences prefs) {
-      return prefs.getBool(widget.result!.id.toString()) ?? false;
-    });
-  }
+  late bool favorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +26,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
         title: const Text('Detalle', style: TextStyle(color: Colors.black),),
         centerTitle: true,
         actions: [
-          FutureBuilder<bool>(
-            future: _favorite,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return IconButton(onPressed: favorite,
-                  icon: snapshot.data == true ? 
-                  const Icon(Icons.favorite, color: Colors.black,)
-                  : const Icon(Icons.favorite_border, color: Colors.black,)
-                );
-              }
-              return IconButton(onPressed: favorite, icon: const Icon(Icons.favorite_border, color: Colors.black,));
-            },
-          )
+          IconButton(onPressed: () => setState((){favorite = !favorite;}), icon: favorite == true ? const Icon(Icons.favorite, color: Colors.black,) : const Icon(Icons.favorite_border, color: Colors.black,)),
         ],
         leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back, color: Colors.black,),),
       ),
@@ -118,7 +86,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
       );
     } else {
       return Image(
-        image: NetworkImage('https://image.tmdb.org/t/p/w185'+widget.result!.posterPath),
+        image: NetworkImage('https://image.tmdb.org/t/p/w185' + widget.result!.posterPath),
         height: size.height * 0.33,
       );
     }

@@ -24,7 +24,7 @@ class _MovieListScreenState extends State<MovieListScreen> {
 
       ),
       body: const MovieListView(),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white
     );
   }
 }

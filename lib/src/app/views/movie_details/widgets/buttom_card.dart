@@ -18,8 +18,8 @@ class BottomCard extends StatelessWidget {
       child: Card(
         elevation: 8.0,
         margin: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(40.0), topRight: Radius.circular(40.0)),
         ),
         child: Padding(
           padding: const EdgeInsets.all(30.0),

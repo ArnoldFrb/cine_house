@@ -71,7 +71,7 @@ class MovieListMobile extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
-                        image: NetworkImage('https://image.tmdb.org/t/p/w185'+item.posterPath),
+                        image: NetworkImage('https://image.tmdb.org/t/p/w185' + item.posterPath),
                         fit: BoxFit.cover
                       )
                     ),

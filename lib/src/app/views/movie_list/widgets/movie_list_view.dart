@@ -1,5 +1,5 @@
-import 'package:cine_house/injection_container.dart';
-import 'package:cine_house/src/app/cubit/movie_details/movielist_cubit.dart';
+import 'package:cine_house/src/di/injection_container.dart';
+import 'package:cine_house/src/app/cubit/movie_list/movielist_cubit.dart';
 import 'package:cine_house/src/app/views/movie_list/widgets/movie_list_mobile.dart';
 import 'package:cine_house/src/app/widgets/error_mesagge.dart';
 import 'package:cine_house/src/app/widgets/loading_indicator.dart';
