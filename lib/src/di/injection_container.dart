@@ -1,5 +1,6 @@
 import 'package:cine_house/src/app/cubit/movie_list/movielist_cubit.dart';
-import 'package:cine_house/src/data/datasources/movies/remote_datasources.dart';
+import 'package:cine_house/src/data/contracts/imovies_remote_datasouerce.dart';
+import 'package:cine_house/src/data/datasources/movies/remote/request_movies.dart';
 import 'package:cine_house/src/data/repositories/movies_repository.dart';
 import 'package:cine_house/src/domain/contracts/imovies_repository.dart';
 import 'package:cine_house/src/domain/usecases/movie/get_movies.dart';
